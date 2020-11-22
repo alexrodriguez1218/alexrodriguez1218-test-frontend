@@ -1,0 +1,28 @@
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Indentification</th>
+      <th scope="col">Fullname</th>
+      <th scope="col">Birth</th>
+      <th scope="col">Father</th>
+      <th scope="col">Mother</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <th scope="row">
+        {{ person.type_identification }} {{ person.identification }}
+      </th>
+      <td>{{ person.fullname }}</td>
+      <td>{{ person.birth | date: "MMM d, y" }}</td>
+      <td>
+        {{ person.typeIdentificationFather }} {{ person.father }} <br />
+        {{ person.fullnameFather }}
+      </td>
+      <td>
+        {{ person.typeIdentificationMother }} {{ person.mother }} <br />
+        {{ person.fullnameMother }}
+      </td>
+    </tr>
+  </tbody>
+</table>
