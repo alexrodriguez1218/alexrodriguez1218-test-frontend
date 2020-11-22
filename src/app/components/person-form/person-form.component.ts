@@ -63,8 +63,9 @@ export class PersonFormComponent implements OnInit {
     !this.requiredMother && delete this.info.mother;
 
     this.personService.savePerson(this.info).subscribe(
-      (res) => {
-        this.mjsConfirmacion = res.msj;
+      (res: any) => {
+        const { msj } = res;
+        this.mjsConfirmacion = msj;
         setTimeout(() => {
           this.mjsConfirmacion = '';
         }, 3000);
